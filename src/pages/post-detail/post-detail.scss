@@ -1,0 +1,24 @@
+page-post-detail {
+
+}
+.toolbar-title-md {
+    font-size: 1.5rem;
+}
+.post_time{
+	font-size: 1.2rem;
+	color: #333;
+	display: inline-block;
+	font-weight: 900;
+}
+.timeicon{
+	float: left;
+	display: block;
+}
+.datediv{
+	float: left;
+	display: block;
+	padding: 0px 0px 0px 10px !important;
+}
+.datetime-disabled, .item-datetime-disabled ion-label {
+    opacity: 1;
+}

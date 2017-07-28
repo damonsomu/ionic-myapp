@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="home">
+  <ion-list>
+    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+			<ion-grid>
+			  <ion-row>
+
+			  <ion-col col-4>
+					<img *ngIf="item.featured_image_urls && item.featured_image_urls.thumbnail" [src]="item.featured_image_urls.thumbnail">
+				</ion-col>
+				
+				<ion-col col-8>
+					<div class="post_title" [innerHTML]="item.title.rendered"></div>
+					<div class='post_time' ion-datetime-picker ng-model="item.date"> {{item.date | date: "hh:mm  MMM yyyy"}} </div>
+					<div>{{item.categories | CategoryIdToName:categories }}</div>
+				</ion-col>
+				
+			  </ion-row>
+			</ion-grid>
+
+    </button>
+  </ion-list>
+</ion-content>

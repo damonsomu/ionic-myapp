@@ -1,0 +1,23 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title><div class="toolbar-title" [innerHtml]="selectedItem.title.rendered"></div></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+ <div *ngIf="selectedItem" class="selection">
+    <h2 [innerHTML]="selectedItem.title.rendered"></h2>
+    <div class="post_time">
+		<ion-icon name="time" class="timeicon"></ion-icon>
+		<ion-datetime disabled class="datediv" displayFormat="hh:mm A - MMM YYYY" [(ngModel)]="selectedItem.date" ></ion-datetime>
+	</div>
+	<div>
+	<img *ngIf="selectedItem.featured_image_urls.medium" [src]="selectedItem.featured_image_urls.medium" class="featured-image" />
+	</div>
+    <div [innerHTML]="selectedItem.content.rendered"></div>
+ </div>
+  <button ion-button block (click)="shareSheetShare()"> Share Post </button>
+</ion-content>
